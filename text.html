@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Chat Assistant</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-image: url('ai.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #333; /* Default text color */
+}
+
+/* Make content containers slightly transparent for background to show */
+.chat-container {
+    background-color: rgba(255, 255, 255, 0.9); /* White with 90% opacity */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 700px;
+    margin: 50px auto; /* Center it with top/bottom margin */
+    text-align: center;
+}
+
+/* Header styling (if not already in style.css, add these) */
+header {
+    background-color: #2c3e50; /* Dark blue */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header a {
+    color: #a9d4ff; /* Lighter blue for link */
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header a:hover {
+    background-color: #34495e;
+}
+
+/* Chat specific styles */
+h2 {
+    color: #3f51b5; /* Blue */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: calc(100% - 24px); /* Full width minus padding */
+}
+
+button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+#response-container {
+    text-align: left;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#response-container h3 {
+    color: #3f51b5;
+    margin-bottom: 10px;
+}
+
+#response-content {
+    background-color: #e9f7ef; /* Light green-blue for response */
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #28a745; /* Green border */
+    color: #333;
+    min-height: 50px; /* Ensure some height even if empty */
+    display: flex;
+    align-items: center; /* Center text vertically */
+}    
+</style>
+</head>
+<body>
+
+    <header>
+        <h1>Citizen Chat Assistant</h1>
+        <a href="index.html">Back to Home</a>
+    </header>
+
+    <main>
+        <div class="chat-container">
+            <h2>Ask the Assistant</h2>
+            <form id="chatForm">
+                <label for="question">Ask a Question:</label>
+                <input type="text" id="question" name="question" placeholder="" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="response-container">
+                <h3>Response:</h3>
+                <div id="response-content"></div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+

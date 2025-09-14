@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CitizenAI - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    form label {
+      font-weight: 600;
+      margin-top: 1rem;
+      display: block;
+      color: #444;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    form button {
+      width: 100%;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #388E3C;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Email / Username</label>
+      <input type="text" id="username" placeholder="Enter your email or username" required>
+      
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent page reload
+      const username = document.getElementById("username").value.trim();
+      // No validation needed, just redirect
+      alert("Login successful! Welcome " + username);
+      window.location.href = "about.html"; // redirect to dashboard
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* ----------------------------
+   Global Styles
+-----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+  background: #4CAF50;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d9ffd9;
+}
+
+/* ----------------------------
+   Main Content Area
+-----------------------------*/
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Section Titles */
+h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn, button {
+  display: inline-block;
+  background: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover, button:hover {
+  background: #388e3c;
+}
+
+/* ----------------------------
+   Forms
+-----------------------------*/
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* full screen minus header */
+}
+
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+
+input, textarea {
+  margin-top: 0.3rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: none; /* show only when needed */
+}
+
+/* ----------------------------
+   Chat Box
+-----------------------------*/
+.chat-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.chat-box {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.message {
+  margin-bottom: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.message.bot {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.message.user {
+  background: #bbdefb;
+  color: #0d47a1;
+  text-align: right;
+}
+
+/* ----------------------------
+   Dashboard
+-----------------------------*/
+section {
+  margin: 2rem 0;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* ----------------------------
+   Landing Page Backgrounds
+-----------------------------*/
+.landing {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url("https://ai.jpg/1200/600?grayscale") no-repeat center center/cover;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.landing h2, .landing p {
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.landing .btn {
+  background: #ff9800;
+}
+
+.landing .btn:hover {
+  background: #e68900;
+}
+
+/* ----------------------------
+   Responsive Design
+-----------------------------*/
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 6px;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .chat-box {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  form {
+    padding: 1.2rem;
+  }
+
+  .landing {
+    padding: 2rem 1rem;
+  }
+}

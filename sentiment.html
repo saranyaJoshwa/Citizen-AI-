@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Sentiment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding-top: 60px;
+	     background-image: url('ai.jpg'); 
+        background-size: cover;
+        background-attachment: fixed; 
+        background-position: center center; 
+        background-repeat: no-repeat; 
+        color: #333;
+
+				 }
+
+               header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #34495e;
+        }
+        /* --- End of Navigation Bar CSS --- */
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto; /* Centering the container below the nav bar */
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        .input-section {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            min-height: 100px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .sentiment-section {
+            margin-top: 30px;
+        }
+        .sentiment-title {
+            font-size: 20px;
+            color: #333;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+        .sentiment-result {
+            font-size: 18px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Services</a>
+            <a href="text.html">Chat</a>
+            <a href="sentiment.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Feedback Sentiment</h1>
+
+        <div class="input-section">
+            <label for="feedback">Enter Feedback for Sentiment:</label>
+            <textarea id="feedback" placeholder="It's very good Response"></textarea>
+        </div>
+        
+        <button id="submitBtn">Submit</button>
+
+        <div class="sentiment-section">
+            <p class="sentiment-title">Sentiment:</p>
+            <p id="sentimentResult" class="sentiment-result"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            var feedbackText = document.getElementById('feedback').value;
+            var sentimentResult = document.getElementById('sentimentResult');
+            
+            var sentiment = 'Neutral';
+            var color = '#ffc107'; // Yellow/Orange
+
+            if (feedbackText.toLowerCase().includes('good') || feedbackText.toLowerCase().includes('excellent')) {
+                sentiment = 'Positive';
+                color = '#28a745'; // Green
+            } else if (feedbackText.toLowerCase().includes('bad') || feedbackText.toLowerCase().includes('terrible') || feedbackText.toLowerCase().includes('poor')) {
+                sentiment = 'Negative';
+                color = '#dc3545'; // Red
+            }
+
+            sentimentResult.textContent = sentiment;
+            sentimentResult.style.color = color;
+            sentimentResult.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
